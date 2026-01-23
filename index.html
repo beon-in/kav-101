@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmoni Horizon Valley | Investasi Kavling Prospektif 39 Jutaan</title>
+    <meta name="description" content="Miliki kavling prospektif dengan view perbukitan di Harmoni Horizon Valley. Investasi aman, nyaman, dan strategis di Bogor Timur. Hubungi 085971103136.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <style>
+        :root {
+            --primary: #1a2a3a; /* Deep Navy */
+            --accent: #27ae60;  /* Nature Green */
+            --text-dark: #2d3436;
+            --text-muted: #636e72;
+            --bg-light: #f9fbfa;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.8; overflow-x: hidden; background-color: #fff; }
+        html { scroll-behavior: smooth; }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+        }
+        .logo { font-family: var(--font-heading); font-weight: 900; font-size: 1.6rem; letter-spacing: 1px; }
+        .logo .part-1 { color: var(--primary); }
+        .logo .part-2 { color: var(--accent); }
+        
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        header {
+            height: 95vh;
+            background: linear-gradient(rgba(26, 42, 58, 0.75), rgba(26, 42, 58, 0.6)), 
+                        url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhptJLxz83k9XNKTe1uthIN_h0mIZKkqJAn9OfwN68tHRvX1ejt_uHHcJvqRn-fGPxPo3ar9x0u3ycxWkx22HGn51Zb94RE82fYEU_1Gerjt_g-UxpJ0zacz4F8CKhB7ikjmIajoL8dFcnStu80tH-uH4wKzGHGhcn9uDWmiy2pkcz6yawlK0SZZmnU/s1600/Header%201b.webp') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 5%;
+        }
+        header h1 { font-family: var(--font-heading); font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; }
+        header p { font-size: clamp(1rem, 2vw, 1.3rem); max-width: 850px; margin-bottom: 40px; font-weight: 300; opacity: 0.9; }
+
+        /* Buttons */
+        .btn-wa { 
+            background: var(--accent); color: white; padding: 18px 40px; border-radius: 50px; 
+            text-decoration: none; font-weight: 700; display: inline-block; transition: 0.4s; 
+            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+        }
+        .btn-wa:hover { background: #1e8449; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(39, 174, 96, 0.4); }
+
+        /* Sections */
+        section { padding: 100px 8%; }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-family: var(--font-heading); font-size: 3rem; color: var(--primary); margin-bottom: 15px; }
+        .underline { width: 80px; height: 5px; background: var(--accent); margin: 0 auto; border-radius: 10px; }
+
+        /* Deskripsi (2 Kolom) */
+        .desc-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 25px; box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .desc-text p { margin-bottom: 20px; color: var(--text-muted); }
+        
+        .benefit-list { list-style: none; margin-top: 30px; }
+        .benefit-list li { margin-bottom: 18px; display: flex; align-items: flex-start; font-weight: 600; color: var(--primary); font-size: 0.95rem; }
+        .benefit-list li i { color: var(--accent); margin-right: 15px; margin-top: 5px; font-size: 1.2rem; }
+
+        /* Gallery */
+        .slider-outer { position: relative; padding: 0 50px; }
+        .swiper-gallery { height: 450px; border-radius: 20px; }
+        .swiper-gallery .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .grid-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 50px; }
+        .grid-gallery img { width: 100%; height: 500px; object-fit: cover; border-radius: 20px; transition: 0.3s; }
+        .grid-gallery img:hover { transform: scale(1.02); }
+
+        /* Pricing Card */
+        .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .price-card { background: #fff; padding: 50px 30px; border-radius: 25px; text-align: center; border: 1px solid #f0f0f0; transition: 0.4s ease; display: flex; flex-direction: column; }
+        .price-card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: var(--accent); }
+        .price-card h3 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); }
+        .price-tag { font-size: 2.2rem; font-weight: 800; color: var(--accent); margin: 20px 0; }
+        .price-card p { font-size: 0.85rem; line-height: 2; flex-grow: 1; }
+
+        /* Testimonial (1:1 Ratio) */
+        .swiper-testi { padding-bottom: 60px; }
+        .testi-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .testi-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+        .testi-content { padding: 25px; text-align: center; }
+
+        /* Footer */
+        footer { background: var(--primary); color: white; padding: 100px 8% 40px; text-align: center; }
+        .footer-logo { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 20px; }
+        .back-to-top { 
+            position: fixed; bottom: 30px; right: 30px; background: var(--accent); 
+            color: white; width: 55px; height: 55px; border-radius: 50%; 
+            display: none; align-items: center; justify-content: center; text-decoration: none; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .desc-container { grid-template-columns: 1fr; }
+            .price-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .price-grid { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 2.2rem; }
+            .slider-outer { padding: 0; }
+            .grid-gallery { grid-template-columns: 1fr; }
+            .grid-gallery img { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <span class="part-1">HARMONI</span> <span class="part-2">VALLEY</span>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#deskripsi">Investasi</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="#harga">Pilihan Kavling</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Kemewahan & Ketenangan<br>Dalam Satu Harmoni</h1>
+        <p>Solusi Investasi Real Yang Aman Nyaman dan Nikmati Hidup Sehat Dengan View Perbukitan, hanya di Harmony Horizon Valley.</p>
+        <a href="https://wa.me/6285971103136?text=Halo,%20saya%20tertarik%20untuk%20survey%20lokasi%20Harmoni%20Horizon%20Valley" class="btn-wa">
+            Jadwalkan Survey Lokasi
+        </a>
+    </header>
+
+    <section id="deskripsi">
+        <div class="section-header">
+            <h2>Investasi Kavling Prospektif</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="desc-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.blogger.com/video.g?token=AD6v5dy6sy_Xeoz2NfYGqeI7ltmkan5xNdE_k_FCJef904OuLiX3wW2jrFP5xzT2iZ-V18B1ilfqOvldeNyyWT72-jJPCWlDJVEff7J44HxF6W7Wnf3aQ8XgpwSLLDoMzY3fHA3CeYQ" allowfullscreen></iframe>
+            </div>
+            <div class="desc-text">
+                <p>Harmoni Horizon Valley merupakan persembahan dari PT. Harmoni Grup Indonesia mengusung konsep terbaru, yaitu tanah kebun Healthy Life yang menggabungkan unsur Kesehatan, Kenyamanan, dan Keberlanjutan.</p>
+                <ul class="benefit-list">
+                    <li><i class="fas fa-map-marked-alt"></i> Strategis, hanya 90 menit dari Jakarta di jalur puncak 2.</li>
+                    <li><i class="fas fa-umbrella-beach"></i> Fasilitas lengkap: Area Komersil, Villa Capsule, Rainbow Slide, & Caffe.</li>
+                    <li><i class="fas fa-certificate"></i> Legalitas Clean and Clear.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" style="background: var(--bg-light);">
+        <div class="section-header">
+            <h2>Galeri Eksklusif</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="slider-outer">
+            <div class="swiper swiper-gallery">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtMC-YKRfrVcanRr78FW1N6LAqs3dAtQLePuQKBJABmbIKQffpc2iui5CzCfhd2Vo_IXt8BUAT79WWzo7UY8RIBogeWpT1UWHBaQm1Co2dhyphenhyphenqgYskM5YmmFxbKAuVanrBUU756jyQdfivzE25aSRqXhWDiEbT6k36KqXAL5iipNmj6W35ED4GnLrX2/s1600/fiture-a.webp" alt="Fitur a"></div>
+                    <div class="swiper-slide"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjq4L1d68X7R6K9co1VKl3hxwhQoR_NZo4r2SngId_TbI1KQINDqgTFmgusd65hWYtWkknfmrQ0kQDw6dlVgKvLOkejqvY5LyFHN7JvVyYXtnUdIw64UottMZioXkzNXiu6i2DPt-ldYJD9OeGysPUs0R9YnE8_bpFKNx7LjbAXgz5y7l76HkAqYadQ/s1600/fiture-b.webp" alt="Fitur b"></div>
+                    <div class="swiper-slide"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4OjIQ4Ak8-gStKwfrXKmhLhhPqX_94gt0GDnEDnbI-zI-kCp1l1H_gkkIO1uwHpgpbtZ-5dAZF5PFJFHSpT2WS5-m6TAO2Ta6v2Gdv__MVa8zmkX6h4F-NA5bDEEbmtRuHNoKZn7XSnpUxPmYkxVkg9tuAB5AnaI8eLhTEKCwfV9UUDaG3V0MR14k/s1600/fiture-c.webp" alt="Fitur c"></div>
+					<div class="swiper-slide"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir_ThS_iMkWK3Vt78NzFyCrItvyJfEgbjn2GWx7a7wtuoovOP3RPHBnqEVS9Bsbw68V8azOBgrpIL4EsP6zKwDMK_ECUcUCs6U2Y-jaSJZxzi2yqIWDAY_99TVKsPH71YnF3ucBLs3Mut41oliOCsWbFc3Z3rA1Bg2LMukyv7ikPhiLfLL1f5Iffs8/s1600/fiture-d.webp" alt="Fitur d"></div>
+					<div class="swiper-slide"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYEXPj4m_aA3qNked64YzmVr2DJH1DkAEUTdxjIGJVvuilSoNVc5LiokOiCoZCkGNR6Cr9oL6R4GwF5c59g8sb2hfZj_tu_5kzTMQmmluPPovFmrLy2A9NIBJ0ULxydW_vC6o9lSICX-WQ7DNKHsutVsvoIzmufnWIXUZwPzoV68iO7DqukRaX88Gy/s1600/5.%20Harmony%20HV%20-%20Img%20a.webp" alt="kunjungan lokasi c"></div>
+					<div class="swiper-slide"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZzWqS4q_yYHQkC6oxpNitO5ntjOfrg4lsXM6KJLI-sAgiQxhP2t-41VLyr9Nir9B5_9_AcOpVJf7Ra0ueAfKhbP4Jgp-kXhaimEHGpfi9R4OmxnN39uHTlaI7-eghCSWzsc3qtAn9p_Wg-HjHCqZCbUJB88A3DDswLHM7Vy3jwj7h3UVDpFAWCmkG/s1600/6.%20Harmony%20HV%20-%20Img%20b.webp" alt="kunjungan lokasi b"></div>
+					<div class="swiper-slide"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4EqeMD7lhmJq7vGWT8nnYLOGKj8MpXHcn3ImDa6ahwHGIbX-kgRlJFz-4tbWWRFOQsuNg44swp1KHkpnjx8MAfk4cnhQVUyuhTjwr21tGfLreUYoeipMYM67XFkxF_bWz-S1qI9nJV5lbXTDbwkV2A97Vh6J5rOJjj4WkLqG0PWDlAF0CUY2pjY6N/s1600/7.%20Harmony%20HV%20-%20Img%20c.webp" alt="kunjungan lokasi a"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <div class="grid-gallery">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgROzMCCCIgm8OU5ouVVeRDCuP8XE_0e2T4yUXHNW35jj2r3-kp4PPyLXRIER94g37HJmY3m0xzpe8CbDIidr-aUJjsh0v7ZkPP_pZpaGhRLAoHX2BF9BUdhRrcXArVdewLzqv8m4aLaRE6zICjAc7FAbtW7jZFkWHStik7rlwH3wI-2Y6xCgFeICML/s1600/Kav.%20Harmoni%20Horiont%20Valley.webp" alt="Kavling View">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYc0_rfrak0ikfwli5ywiceIEak5kX8ZwdvxrrhvZDNt4gYqZLfe6iiapeTePStXCufiNdnxIUNdgGXgP2DTFO5pOI5jvDVDqu2eHFZ750ZHEDquXvwmij38VX8OjJ8a5HoId9OSZ2V_C2hSkq_EHXWnEXhiHPld6TiCsz-Rm2euKnS8FNYjtmu4aw/s1600/siteplan-b.webp" alt="Siteplan">
+        </div>
+    </section>
+
+    <section id="harga">
+        <div class="section-header">
+            <h2>Pilihan Kavling & Harga</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>LIMITED PROMO</h3>
+                <div class="price-tag">Rp 39 Juta</div>
+                <p>Cash Keras 39 Jt/100 m². Include BPHTB, AJB, PPH, & PPAT. Free 1 Pohon Tabebuya & 1 Bibit Mangga.</p>
+            </div>
+            <div class="price-card">
+                <h3>EXCLUSIVE DEAL</h3>
+                <div class="price-tag">Rp 40 Juta</div>
+                <p>Cash Keras 40 Jt/100 m². Include BPHTB, AJB, PPH, & PPAT. Fasilitas pohon dan bibit gratis.</p>
+            </div>
+            <div class="price-card">
+                <h3>HOT SALE</h3>
+                <div class="price-tag">Rp 55 Juta</div>
+                <p>Cash Keras 55 Jt/100 m². Surat-surat lengkap sampai AJB & BPHTB. Booking Fee 5 Juta.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="https://wa.me/6285971103136" class="btn-wa">Tanya Harga & Survey</a>
+        </div>
+    </section>
+	
+	<section id="testimoni" style="background: var(--bg-light);">
+        <div class="section-header">
+            <h2>Customer yang sudah Akad</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="slider-outer">
+            <div class="swiper swiper-testi">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testi-card">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4-FnUkyjXo-3JbU6r3qdHdD_hgecX4POCIQyeDZEFsW3MUa0r3fXIbrM4kL7cEvDDXuWBaDWo_ZFJ0bTUbXVMXRKWfmM7TdctcWVDndTw77W3tUNRL9cwYQU5W2lExW-Em-NmaZAN-rfaDc3egaAxQ770DiMOzsnAfFLutZt4qcvefZvI-Uxjki6L/s1600/Testi-1.webp" class="testi-img" alt="Testi 1">
+                            <div class="testi-content"><strong>Momen Akad 01</strong></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testi-card">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2uzDB66sGQYjInJL1dxs2O0toTvSP000rV11YBpadxeo3ztvpRdhQyAQdHv4MZD3XfMf4Bfj3s1f3ysK75D2uAZk6c_jiOk68KKLMlDLq-4R4AwyztIEzCBd_tg5sIrD8dV5W6UjDvp5kSe63zgeKOIZXG0irz7IbOjbrlWq_uIsl2yNIf57L6jgK/s1600/Testi-2.webp" class="testi-img" alt="Testi 2">
+                            <div class="testi-content"><strong>Momen Akad 02</strong></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testi-card">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhE2B4xYGmXUXlSF_5ONB-WS8DGf7MDoGCWgV-U9-rSqD7gRqHk7F7WFEP7aMPTLNJ2ekdlYfNT9a1nSfnp_lbE1UxVhzR-hEm4otAxxF-gMJzL5ZQL_-7b1E0hIzqh6uM5jBVqrdwR5sQvA7-fFf16iPVCn5sU99XD6QMImY5tRe91pvAWKVV_7wRw/s1600/Testi-3.webp" class="testi-img" alt="Testi 3">
+                            <div class="testi-content"><strong>Momen Akad 03</strong></div>
+                        </div>
+                    </div>
+					<div class="swiper-slide">
+                        <div class="testi-card">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOG_8OISygJOX6eQ05YFxI-tikWhkxcdNMuWBAbEjePezu9h4vJWJp9BL88P4bMVY6b0tXrT-8KgZEI4fISZtBxgvGVik-eDM0c4234rkpAAnR3fBgUUVf2b0X9R2ht44S5K8K5FVVOtt5niCAaML8mKcXfYf2e4xqSsboHys33cQOPJLwXxWJ1oIr/s1600/Testi-4.webp" class="testi-img" alt="Testi 3">
+                            <div class="testi-content"><strong>Momen Akad 04</strong></div>
+                        </div>
+                    </div>
+					<div class="swiper-slide">
+                        <div class="testi-card">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1OTeNSWpRuSEBjEptvaoyhZHN_kCWqpbzje_LjW-qqyGk1-i0qt_DJ8_Xp3AfrCklQz34tAvyyGTGDlQfy8B5sJ0FQ6Flf1rnke128VpdEFTS0-W6ohoGU7gy9bHj6P5xyWmxRid7P92wDgHtbv6dB9EIkguBiQo2fV2Z18hE4zlGabPg6XEbkQ4F/s1600/Testi-5.webp" class="testi-img" alt="Testi 3">
+                            <div class="testi-content"><strong>Momen Akad 05</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo"><span class="part-1" style="color:#fff">HARMONI</span> <span class="part-2">VALLEY</span></div>
+        <p>Copyright &copy; 2024 Niaga Property Independent Agent - All Rights Reserved.</p>
+    </footer>
+
+    <a href="#home" class="back-to-top" id="btnBackToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // Gallery Slider
+        new Swiper(".swiper-gallery", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: { delay: 3000 },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+
+        // Testimonial Slider
+        new Swiper(".swiper-testi", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+
+        // Scroll Logic
+        const btn = document.getElementById("btnBackToTop");
+        window.onscroll = () => {
+            window.scrollY > 600 ? btn.style.display = "flex" : btn.style.display = "none";
+        };
+    </script>
+</body>
+</html>
